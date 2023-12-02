@@ -1,0 +1,45 @@
+countHours = null
+countMinutes = null
+countSeconds = null
+
+h = $(".hours span")
+m = $(".minutes span")
+s = $(".seconds span")
+
+setInterval ->
+	date = new Date()
+	nowHours = date.getHours()
+	nowMinutes = date.getMinutes()
+	nowSeconds = date.getSeconds()
+	
+	if countSeconds != nowSeconds
+		s.addClass "pop"
+		setTimeout ->
+			s.removeClass "pop"
+		, 300
+		countSeconds = 60 - nowSeconds
+		if nowSeconds == 0
+			countSeconds = 0
+		s.text (if countSeconds < 10 then "0" else "") + countSeconds
+
+	if countMinutes != nowMinutes && nowSeconds != 0 || countMinutes == null
+		m.addClass "pop"
+		setTimeout ->
+			m.removeClass "pop"
+		, 300
+		countMinutes = 59 - nowMinutes
+		if nowMinutes == 0
+			countMinutes = 59
+		m.text (if countMinutes < 10 then "0" else "") + countMinutes
+		countMinutes = nowMinutes
+
+	if countHours != nowHours && nowMinutes == 0 && nowSeconds == 1 || countHours == null
+		h.addClass "pop"
+		setTimeout ->
+			h.removeClass "pop"
+		, 300
+		countHours = 23 - nowHours
+		h.text (if countHours < 10 then "0" else "") + countHours
+		countHours = nowHours
+
+, 1000

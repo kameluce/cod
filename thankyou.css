@@ -1,0 +1,46 @@
+body {
+
+  background-color:#f4ffdd ;
+}
+
+.icon {
+  margin-top: 5%;
+}
+
+.thank-you-container {
+
+    font-family: cairo;
+    font-size: 1.2em;
+    font-weight: 800;
+    background-color: #aeff00;
+    border-radius: 20px;
+    color: #376201;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 10%;
+    padding-top: 5%;
+    border: 1px dashed #376201;
+    margin: 10px;
+    box-shadow: 0 10px 30px 0 rgba(63, 63, 63, 0.2), 0 4px 10px 0 rgba(34, 34, 34, 0.2);
+    
+  }
+
+  .thank-you-content {
+    margin-bottom: 10%;
+    margin: 10%;
+  }
+
+  .button {
+
+    background-color: #376201;
+    padding-left: 3%;
+    padding: 3%;
+    max-width: 120px;
+    border-radius: 20px;
+    color: aliceblue;
+    
+
+  }
+
+
+  
